@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <!--Brent Taylor
+  05/14/2017
+  Become a blogger-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+
+    <title>Create an account</title>
+		<!--redirect if logged in-->
+		<?php if(isset($_SESSION['username'])): ?>
+		<meta http-equiv="refresh" content="2; URL='http://btaylor.greenrivertech.net/IT328/blog/'" />
+		<?php endif; ?>
+    
+</head>    
+<body>
+    <div class="col-sm-10">
+<h1>Become a Blogger!</h1>
+</div>
+    <div class="container">
+            <div class="row">
+							<img src="images/blog.png" id="blogging">
+                <h2><strong>Create a new account below</strong></h2>
+                <hr><!--Break line-->
+                <form action="./create" method="post" class="form-horizontal">
+                    
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        
+						<div class="col-sm-8"> <!--Sets form columns a fixed size-->
+                        <div class="panel-body"><strong>Username</strong></div>
+                            
+                            <input class="form-control" type="text" name="username" id="create">
+                            
+                            <div class="panel-body"><strong>Email</strong></div>
+                            
+                            <input class="form-control" type="email" name="email" id="create" >
+							
+                            
+                            	 <div class="panel-body"><strong>Password<br/></strong></div>
+                               <input class="form-control" type="password" name="password" id="create">
+                               
+                                <div class="panel-body"><strong>Verify Password<br/></strong></div>
+                               <input class="form-control" type="password" name="verifyPassword" id="create">
+                            
+                        </div>
+                        
+						<!--Creates Image column on new line-->
+						 <div class="col-sm-3">
+							<div class="panel panel-default">
+							<strong>Upload a portrait</strong> 
+							<input type ="text" class="form-control-lg form-control " id="create" placeHolder="www.example.com/jpg.jpg" name="blogpic">
+
+							</div> <!--end image-->
+                        
+												<!--Quick bio here-->         
+    <label for="groupedform" class="col sm-2 col-form-label-lg col-form-label " id="biography"> Quick Biography</label><br/>
+    <div class="col-md-6">
+            <textarea class="form-control-lg form-control" id="bio" name="bio" rows="6" cols="70"></textarea><br>
+        </div> <!--End quick bio-->
+
+                        
+                          <div class="col-xs-2 col-xs-offset-8">
+                            <!--pull button right-->
+                            <div class="pull-right">
+                                <!--Submit button here-->
+                        <input class="form-control btn btn-primary"
+                               type="submit" value="Start Blogging!" >
+                          </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+</body>   
+</html>

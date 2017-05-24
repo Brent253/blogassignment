@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+  <!--Brent Taylor
+  05/14/2017
+  Blog Homepage-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+
+    <title>HomePage</title>
+    
+</head>    
+<body>
+
+<!--Nav bar for logged in users-->
+<?php if(!isset($_SESSION['username'])): ?>
+        <div class= "container col-sm-2" id="nav">
+      <ul class="nav nav-stacked">
+        Blog Site<br/>
+        <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/create">Become a Blogger &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About Us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/login">Login &#65513;</a><br/>
+      </ul>    
+        </div>
+				<!--else if not signed in-->
+		<?php else: ?>
+		<div class= "container col-sm-2" >
+      <ul class="nav nav-stacked">
+                <strong>Blog Site</strong><br/>
+        <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/viewblogs">My Blogs &#65513; </a><br/>
+				<a href="http://btaylor.greenrivertech.net/IT328/blog/makeblog">Create Blog &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/logout">Logout &#65513;</a><br/>
+      </ul>    
+        </div><!--End navbar-->
+
+<?php endif; ?> <!--end if statement php-->
+<div class="row col-md-4 container col-sm-5">
+<div class="homeicon">
+	<img src="images/user.jpg" id="user">
+
+	<p>Welcome to my blog page! <br> Author: Brent Taylor</p>
+	</div>
+	<hr>
+</div>
+
+
+
+
+</body>   
+</html>

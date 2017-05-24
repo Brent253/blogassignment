@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+  <!--Brent Taylor
+  05/14/2017
+  Blog Homepage-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+
+    <title>About</title>
+    
+</head>    
+<body id="aboutbody">
+<!--The Nav Bar-->
+
+<!--If signed in-->
+<?php if(!isset($_SESSION['username'])): ?>
+        <div class= "container col-sm-1" id="nav">
+      <ul class="nav nav-stacked">
+        Blog Site<br/>
+        <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/create">Become a Blogger &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About Us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/login">Login &#65513;</a><br/>
+      </ul>    
+        </div>
+				<!--else if not signed in-->
+		<?php else: ?>
+		<div class= "container col-sm-1" id="nav">
+      <ul class="nav nav-stacked">
+        Blog Site<br/>
+        <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/viewblogs">My Blogs &#65513; </a><br/>
+				<a href="http://btaylor.greenrivertech.net/IT328/blog/makeblog">Create Blog &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/logout">Logout &#65513;</a><br/>
+      </ul>    
+        </div>
+
+<?php endif; ?> <!--end if statement php-->
+
+  
+		<div class="col-sm-10" id="aboutlogo">
+         <h1>The Blog site</h1>
+        <img src="images/bloglogo.jpg" id="bloglogo">
+        </div>
+
+<div class="col-sm-12" id="aboutsection">
+            <b>The internet is abuzz with our blog content.</b>
+            <hr>
+            <blockquote>"I've never felt more involved in a such a great community!"-James Brown</blockquote>
+            <hr>
+            <b>Hear what others are saying about us!</b><br/>
+            <blockquote>"I can finally apply my skills in a professional enviroment with other users!" -long time user Sally Nguyen</blockquote><br/>
+            <br/>            
+            <blockquote>"Blogging has always been a passion of mine, now others will be able to share my stories!" -blog contributer Terry Stone</blockquote>
+        </div>
+
+
+
+
+</body>   
+</html>

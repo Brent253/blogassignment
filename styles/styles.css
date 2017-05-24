@@ -1,0 +1,64 @@
+#notepad
+{
+    width: 100px;
+    height: 100px;
+   /* box-shadow: 10px 10px 5px #888888;*/
+}
+
+html,body
+{
+    background-color: silver;
+}
+
+#user
+{
+  /*  width: 100px;
+    height: 100px;*/
+    margin: auto; /*generate space around icon*/
+    display: block;
+    border-radius: 25px;
+    padding: 50px; /*create space around image*/
+}
+href{
+    text-decoration: none;
+}
+
+p
+{
+    text-align: center;
+}
+
+#blogging
+{
+    width: 100px;
+    height: 100px;
+ /*   float: right;*/
+}
+
+#bloglogo
+{
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+
+#aboutbody{
+    text-align: center;
+}
+
+#aboutsection
+{
+    font-style: italic;
+}
+
+#loginbody
+{
+    text-align: center;
+}
+
+#startbutton
+{
+  
+    width: 150px;
+    height: 50px;
+}

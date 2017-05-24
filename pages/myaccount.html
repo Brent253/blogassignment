@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="js/text.js"></script>
+	<title>blog</title>
+	</head>
+    <body>
+        <!--Check session, display navbar-->
+		<check if="{{ !isset($_SESSION['username']) }}">
+        <true>
+        <div class= "container col-sm-2" >
+      <ul class="nav nav-stacked">
+        Blog Site<br/>
+    <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/create">Become a Blogger &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About Us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/login">Login &#65513;</a><br/>
+      </ul>    
+        </div>
+        </true>
+            <false>
+		<div class= "container col-sm-1" >
+      <ul class="nav nav-stacked">
+        <strong>Blog Site</strong><br/>
+              <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/viewblogs">My Blogs &#65513; </a><br/>
+				<a href="http://btaylor.greenrivertech.net/IT328/blog/makeblog">Create Blog &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/logout">Logout &#65513;</a><br/>
+      </ul>    
+        </div>
+            </false>
+        </check> <!--End check navbar.-->
+        
+        <div class="col-sm-8" >
+        <h2>{{ @username }}'s Blogs</h2>
+        </div>
+		<div class="row col-md-11 col-xs-11 page-container">
+             <div class="row col-sm-10 col-md-10 col-lg-10">
+             <a href="http://btaylor.greenrivertech.net/IT328/blog/blog?blog={{ @latestblog[title] }}">
+                <h4>Recent blog:</h4></a>
+             {{ @latestblog[title] }}: {{ @latestblog["text"] }}<br/>
+            </div>
+            <div class= "container col-sm-3" >
+               <img src ="images/user.jpg" >
+               <!--Echo user-->
+               {{ @username }}
+               <hr>
+               <!--Echo Bio -->
+               Biography: {{ @bio }}
+            </div>
+        </div>
+        <div class="page-container row col-md-12 col-xs-10 ">
+            <strong>Blogs i've created:</strong>
+            
+              <repeat group="{{ @myblogs }}" value="{{ @row }}">
+                
+             <repeat group="{{ @row }}" key="{{ @key }}" value="{{ @value }}">
+                
+                <check if="{{ @value[title] }} == {{ @recent[title] }} ">
+                    
+                <false><a href="http://btaylor.greenrivertech.net/IT328/blog/blog?blog={{@value[title]}}">{{@value[title]}}</a> 
+                    <script>
+                                //Call js script here to get word count
+                             document.write(trackText("{{ @value[text] }}"));
+                  </script>
+                -{{ @value[id]}} <br/>
+                {{@value[text]}} <br/><br/></false>
+                </check>
+              </repeat>
+              </repeat>
+        </div>
+    </body> 

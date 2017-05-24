@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <!--Brent Taylor
+  05/14/2017
+  Blog Login
+	
+	This is the login page for the blog site-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+
+    <title>Log In</title>
+			<?php if(isset($_SESSION['username'])): ?>
+	<meta http-equiv="refresh" content="2; URL='http://btaylor.greenrivertech.net/IT328/blog/'" />
+	<?php endif; ?>
+    
+</head>    
+<body id="loginbody">
+<!--Blog Header-->
+<!--Login here-->
+<fieldset id="loginform">
+	<form action="./login" method="post">
+	
+	<legend id="legendtitle">Welcome Back!</legend>
+	<b>Please Login to Continue</b>
+	<div id="uname">Username:</div>
+	<input type="text" name="username" id="username" placeHolder="Username" > <!--required-->
+        <br>
+        <p></p>
+        <br>
+	<div id="pword">Password:</div> 
+	<input type="password" name="password" placeHolder="Password"><br> <!--required-->
+	
+	
+	<br>
+	
+
+                            <div class="container">
+                                <!--Submit button here-->
+                        <input class="form-control btn btn-primary"
+                               type="submit" value="Login" id="startbutton">
+                          </div>
+
+</form>
+</fieldset>
+
+</body>
+
+</html>
+
+

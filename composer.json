@@ -1,0 +1,16 @@
+{
+	"name": "btaylor/blog",
+	"authors": [
+			{
+				"name": "Brent Taylor",
+				"email": "btaylor17@mail.greenriver.edu"
+			}
+	],
+	"require": {
+		"bcosca/fatfree-core": "dev-master"
+	},
+	  "autoload": {
+        "classmap": ["model/", "classes/"] 
+    }
+ 
+}

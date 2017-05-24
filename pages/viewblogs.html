@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+    <!---This class will list the blogs posted by the user--->
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>View my Blogs</title>
+    <!--Check the user id for the session-->
+	<check if="$_SESSION['id'] === @id">
+		<false><meta http-equiv="refresh" content="2;
+		URL='http://btaylor.greenrivertech.net/IT328/blog/viewblogs?id={{ $_SESSION['id'] }}'"/>{{ @id }}
+		</false>
+	</check> <!--End check-->
+	</head>
+    <body>
+        <!--Check our session-->
+	<check if="{{ !isset($_SESSION['username']) }}">
+            <true>
+        <div class= "container col-sm-2" >
+      <ul class="nav nav-stacked">
+       <strong>Blog Site</strong><br/>
+        <img src="images/th.jpg" id="notepad"><br>
+             <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/create">Become a Blogger &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About Us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/login">Login &#65513;</a><br/>
+      </ul>    
+        </div>
+			</true>
+			<false>
+	<div class= "container col-sm-2" >
+      <ul class="nav nav-stacked">
+       <strong>Blog Site</strong><br/>
+         <img src="images/th.jpg" id="notepad"><br>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/">Home &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/viewblogs">My Blogs &#65513; </a><br/>
+				<a href="http://btaylor.greenrivertech.net/IT328/blog/makeblog">Create Blog &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/about">About us &#65513;</a><br/>
+        <a href="http://btaylor.greenrivertech.net/IT328/blog/logout">Logout &#65513;</a><br/>
+      </ul>    
+        </div>
+		</false>
+    </check>
+        <div class="col-sm-6 col-lg-6 col-xs-6" 
+        <h1>View my Blogs</h1>
+        <img src="images/user.jpg" ><br/>
+        </div>
+        <div class ="row">
+			<div class="container col-sm-8">
+				<table class ="table">
+					<tr><!--Start heading row-->
+					<th>Blog Summary</th>
+					<th>Update Blog</th>
+					<th>Delete Blog<th>
+					</tr> <!--End heading row-->
+					
+					<repeat group="{{ @myblogs }}" value="{{ @row }}">
+						
+					<repeat group="{{ @row }}" key="{{ @blog1 }}" value="{{ @value }}">
+						
+					<repeat group="{{ @value }}" key="{{ @blog2 }}" value="{{ @othervalue }}">
+						
+					<tr>
+					<td><a href ="http://btaylor.greenrivertech.net/IT328/blog/blog?blog={{ @othervalue }}">{{ @value2 }}</a></td>
+					<td><img src="images/pencil-icon.png"></td>
+					
+					<td><a href ="http://btaylor.greenrivertech.net/IT328/blog/delete?delete={{ @othervalue }}"><img src="images/trash.png"></a></td>
+					</tr> <!--End table row-->
+					
+			  </repeat>
+              </repeat>
+              </repeat>
+				</table><!--End table-->
+			</div>
+			
+			
+			<div class="container col-sm-4">
+				{{ @username }}<br/>
+				
+				Quick Biography : {{ @bio }}
+			</div>
+		</div> <!--End class-->
+		

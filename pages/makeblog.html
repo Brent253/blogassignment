@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+	<title>Start a blog</title>
+	<!--Check Session-->
+	<?php if(!isset($_SESSION['username'])): ?>
+	
+	<meta http-equiv="refresh" content="2; URL='http://btaylor.greenrivertech.net/IT328/blog/'" />
+	
+	<?php endif; ?> <!--End check session-->
+	</head>
+    <body>
+		<!--Title header-->
+        <div class="col-sm-8" >
+        <h1>Whats on your mind?</h1>
+        <img src="images/th.jpg" id="logo"><br/>
+        </div> <!--End header-->
+
+        <div class ="row">
+<div class="container col-sm-12">
+  <form action="./makeblog" method="post"> <!--Start form-->
+    <div class="form-group row">
+      <div class="col-sm-6">
+		<label for="formgroup"  class="col-form-label col-form-label-lg col-sm-4">Title</label>
+        <input type="text" class="form-control lg form-control" id="formgroup" name="title" >
+      </div>
+      
+    </div>
+	<!--Form group-->
+    <div class="form-group row">
+         <div class="col-sm-8">
+    <label for="formgroup" class="col sm-2 col-form-label col-form-label-lg" id="blogentry">Blog Entry</label><br/>
+    
+		<div class="col-sm-4"> <!--Text area here-->
+            <textarea class="form-control form-control-lg" id="formgroup"  style="width: 600px; height: 300px;" name="text"></textarea>
+		</div> <!--End text area-->
+		
+		</div> <!--End column-->
+		
+	</div> <!--End formgroup-->
+	<!--SubmitButton here-->
+		<div class="col-sm-6">
+			
+        <input class="form-control btn btn-success" id="blogbutton" type="submit"></button>
+		<input value='<?php print($_SESSION["id"]); ?>' type="hidden" name="id" >
+  </form> <!--End form-->
+		</div>
+</div>
